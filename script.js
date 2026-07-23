@@ -23,4 +23,22 @@ function pageLoaded(){
         addTodoToUI(todo);
     });
 }
+function addTodoToStorage(newTodo){
+    checkTodoFromStorage();
+    todos.push(newTodo);
+    localStorage.setItem("todos",JSON.stringify(todos));
+    
+}
+function checkTodoFromStorage(){
+    if(localStorage.getItem("todos") === null){
+        todos = [];
+    }else{
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+}
+function showAlert(type,message){
+    setTimeout(function(){
+        div.remove();
+    }2500);
 
+}
